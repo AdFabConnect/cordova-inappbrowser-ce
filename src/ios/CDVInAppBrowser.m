@@ -55,7 +55,10 @@ NSString *CLOSE_BUTTON_LABEL = @"Done";
 - (CDVInAppBrowser*)initWithWebView:(UIWebView*)theWebView
 {
     self = [super initWithWebView:theWebView];
-
+    if (self != nil) {
+        // your initialization here
+        [[NSURLCache sharedURLCache] removeAllCachedResponses];
+    }
     iab = self;
 
     return self;
